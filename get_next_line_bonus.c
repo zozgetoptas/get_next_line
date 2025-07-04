@@ -33,14 +33,7 @@ static char	*update_remainder(char *remainder)
 		free(remainder);
 		return (NULL);
 	}
-	if (*(found_new_line + 1) == '\0')
-	{
-		new_remainder = ft_strdup("");
-	}
-	else
-	{
-		new_remainder = ft_strdup(found_new_line + 1);
-	}
+	new_remainder = ft_strdup(found_new_line + 1);
 	free(remainder);
 	return (new_remainder);
 }
