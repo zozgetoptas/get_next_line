@@ -52,12 +52,10 @@ static char	*update_remainder(char *remainder)
 
 static char	*join_buffers(char *remainder, char *buffer)
 {
-	char	*temp;
 	char	*new_remainder;
 
-	temp = remainder;
-	new_remainder = ft_strjoin(temp, buffer);
-	free(temp);
+	new_remainder = ft_strjoin(remainder, buffer);
+	free(remainder);
 	if (!new_remainder)
 		return (NULL);
 	return (new_remainder);

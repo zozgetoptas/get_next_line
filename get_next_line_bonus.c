@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ztoptas <ztoptas@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 10:31:49 by ztoptas           #+#    #+#             */
+/*   Updated: 2025/07/05 10:31:49 by ztoptas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "get_next_line_bonus.h"
 #include <stdlib.h>
@@ -40,12 +52,10 @@ static char	*update_remainder(char *remainder)
 
 static char	*join_buffers(char *remainder, char *buffer)
 {
-	char	*temp;
 	char	*new_remainder;
 
-	temp = remainder;
-	new_remainder = ft_strjoin(temp, buffer);
-	free(temp);
+	new_remainder = ft_strjoin(remainder, buffer);
+	free(remainder);
 	if (!new_remainder)
 		return (NULL);
 	return (new_remainder);
